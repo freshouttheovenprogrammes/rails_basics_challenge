@@ -17,7 +17,14 @@ describe "As a user" do
 
       click_on('Edit')
 
-      expect(current_path).to eq "students/#{student.id}/edit"
+      expect(current_path).to eq "/students/#{student.id}/edit"
+      expect(page).to have_content "Edit Information for Gergory Phulls Here"
+
+      fill_in('student[first_name]', with: 'John')
+      fill_in('student[last_name]', with: 'John')
+      click_button('Update Student')
+      expect(current_path).to eq "/students/#{student.id}"
+      expect(page).to have_content 'John John'
     end
   end
 end
