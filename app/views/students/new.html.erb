@@ -1,0 +1,10 @@
+<%= form_for @student do |f| %>
+
+<% f.label :first_name %>
+<%= f.text_field :first_name, placeholder: "First Name" %>
+
+<% f.label :last_name %>
+<%= f.text_field :last_name, placeholder: "Last Name" %>
+
+<%= f.submit %>
+<% end %>
