@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Student.destroy_all
+
+require 'csv'
+
+CSV.foreach("./data/students.csv", headers: true) do |row|
+  student = Student.create!(
+                id: row[0],
+                first_name: row[1],
+                last_name: row[2])
+                puts "Created #{student.id}"
+end
