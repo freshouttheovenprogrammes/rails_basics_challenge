@@ -7,5 +7,8 @@ describe "As a user" do
     visit student_path(student)
 
     expect(page).to have_link('Index')
+    click_on('Index')
+
+    expect(current_path).to eq '/students'
   end
 end
