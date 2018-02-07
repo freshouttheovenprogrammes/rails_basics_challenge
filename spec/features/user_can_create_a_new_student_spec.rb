@@ -20,8 +20,7 @@ describe "As a user" do
       fill_in('student[first_name]', with: 'John')
       click_on('Create Student')
 
-      expect(page).to have_content('You done messed up bud')
-      expect(current_path).to eq('/students')
+      expect(current_path).to eq('/students/new')
     end
   end
 end
